@@ -1,0 +1,15 @@
+import React from 'react'
+import 'react-dropdown/style.css';
+import Dropdown from 'react-dropdown'
+import DataSelector from '../../utils/getOptions.js';
+
+export default function CountrySelect(props) {
+    //Write logic to render all countries as dropdown options
+    const options = DataSelector().countriesOption;
+    
+    return(
+        <div className="country-select">
+            <Dropdown options={options} onChange={props.changeEvent} value={props.defaultChoice} placeholder={props.defaultChoice} />
+        </div>
+    )
+}
