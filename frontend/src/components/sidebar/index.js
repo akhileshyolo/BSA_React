@@ -16,7 +16,7 @@ export default class Sidebar extends React.Component {
       }
 
       this.updateRoute = function () {
-        let queryString = Object.keys(this.state).map(i => `${i}=${this.state[i]}&`).join("");
+        let queryString = Object.keys(this.state).map(i => `${i}=${this.state[i] ? this.state[i]: ""}&`).join("");
         window.history.pushState(undefined, undefined, `/?${queryString}`)
       }
       this.updateState = (key,arg) => {
